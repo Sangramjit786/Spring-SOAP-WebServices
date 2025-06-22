@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<GetCourseDetailsRequest xmlns="http://java-soap.com/courses"
-                         xsi:schemaLocation="http://java-soap.com/courses course-details.xsd"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <id>123</id> <!-- numbers -->
-</GetCourseDetailsRequest>
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <GetCourseDetailsRequest xmlns="http://java-soap.com/courses">
+            <id>1</id>
+        </GetCourseDetailsRequest>
+    </Body>
+</Envelope>
