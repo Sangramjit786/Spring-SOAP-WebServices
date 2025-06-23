@@ -25,10 +25,10 @@ public class CourseDetailsEndpoint {
     //http://java-soap.com/courses
     //GetCourseDetailsRequest
     @PayloadRoot(namespace = "http://java-soap.com/courses",
-            localPart="GetCourseDetailsRequest")
+            localPart = "GetCourseDetailsRequest")
     @ResponsePayload
     public GetCourseDetailsResponse
-        processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
+    processCourseDetailsRequest(@RequestPayload GetCourseDetailsRequest request) {
         Course course = service.findById(request.getId());
 
         return mapCourseDetails(course);
@@ -69,4 +69,24 @@ public class CourseDetailsEndpoint {
 
         return mapAllCourseDetails(courses);
     }
+
+    @PayloadRoot(namespace = "http://java-soap.com/courses", localPart = "DeleteCourseDetailsRequest")
+    @ResponsePayload
+    public DeleteCourseDetailsResponse deleteCourseDetailsRequest(@RequestPayload DeleteCourseDetailsRequest request) {
+
+        CourseDetailsService.Status status = service.deleteById(request.getId());
+
+        DeleteCourseDetailsResponse response = new DeleteCourseDetailsResponse();
+        response.setStatus(mapStatus(status));
+
+        return response;
+    }
+
+    private Status mapStatus(CourseDetailsService.Status status) {
+        if (status == CourseDetailsService.Status.FAILURE)
+            return Status.FAILURE;
+        return Status.SUCCESS;
+    }
+
+
 }

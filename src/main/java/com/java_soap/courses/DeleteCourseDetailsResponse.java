@@ -12,6 +12,7 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -25,7 +26,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="CourseDetails" type="{http://java-soap.com/courses}CourseDetails"/&gt;
+ *         &lt;element name="status" type="{http://java-soap.com/courses}Status"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +37,37 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "courseDetails"
+    "status"
 })
-@XmlRootElement(name = "GetCourseDetailsResponse")
-public class GetCourseDetailsResponse {
+@XmlRootElement(name = "DeleteCourseDetailsResponse")
+public class DeleteCourseDetailsResponse {
 
-    @XmlElement(name = "CourseDetails", required = true)
-    protected CourseDetails courseDetails;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
+    protected Status status;
 
     /**
-     * Gets the value of the courseDetails property.
+     * Gets the value of the status property.
      * 
      * @return
      *     possible object is
-     *     {@link CourseDetails }
+     *     {@link Status }
      *     
      */
-    public CourseDetails getCourseDetails() {
-        return courseDetails;
+    public Status getStatus() {
+        return status;
     }
 
     /**
-     * Sets the value of the courseDetails property.
+     * Sets the value of the status property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CourseDetails }
+     *     {@link Status }
      *     
      */
-    public void setCourseDetails(CourseDetails value) {
-        this.courseDetails = value;
+    public void setStatus(Status value) {
+        this.status = value;
     }
 
 }
