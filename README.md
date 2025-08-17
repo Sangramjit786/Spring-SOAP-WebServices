@@ -75,6 +75,11 @@ public class WebServiceConfig {
 ### 3. Message Dispatcher Servlet
 
 The Message Dispatcher Servlet is configured to handle all requests to `/ws/*` and route them to the appropriate endpoint methods based on the SOAP action and payload root element.
+- `MessageDispatcherServlet` is the core of Spring Web Services.  
+- It is configured in `WebConfig` to:
+  - Handle SOAP messages.  
+  - Map requests to correct endpoints.  
+  - Expose WSDL URL.
 
 ### 4. WSDL Generation
 
