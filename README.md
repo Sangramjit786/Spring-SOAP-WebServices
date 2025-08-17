@@ -126,6 +126,44 @@ public DeleteCourseDetailsResponse deleteCourseDetailsRequest(
 }
 ```
 
+### 7) Implementing SOAP Web Service – GetAllCourseDetailsRequest
+
+- Endpoint created to handle GetAllCourseDetailsRequest.
+- Returns a list of available courses with details.
+- Example request:
+
+```xml
+<GetAllCourseDetailsRequest xmlns="http://springsoapwebservices.com/courses"/>
+```
+
+- Example response:
+```xml
+<GetAllCourseDetailsResponse>
+    <CourseDetails>
+        <id>1</id>
+        <name>Spring Boot</name>
+        <description>Microservices with Spring Boot</description>
+    </CourseDetails>
+</GetAllCourseDetailsResponse>
+```
+
+### 8) Implementing SOAP Web Service – DeleteCourseDetailsRequest
+
+- Endpoint created to handle DeleteCourseDetailsRequest.
+- Deletes a course by ID and returns status (SUCCESS/FAILURE).
+- Example request:
+```xml
+<DeleteCourseDetailsRequest xmlns="http://springsoapwebservices.com/courses">
+    <id>1</id>
+</DeleteCourseDetailsRequest>
+```
+- Example response:
+```xml
+<DeleteCourseDetailsResponse>
+    <status>SUCCESS</status>
+</DeleteCourseDetailsResponse>
+```
+
 ## Running the Application
 
 1. Clone the repository
