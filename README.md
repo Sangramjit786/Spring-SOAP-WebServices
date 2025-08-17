@@ -182,3 +182,15 @@ You can test the web service using SOAP UI or any SOAP client. Example request/r
 - Spring Boot DevTools
 - Lombok (for reducing boilerplate code)
 - JAXB API (for XML binding)
+
+## ✅ Benefits of This Project
+
+- Hands-on demonstration of building SOAP Web Services with Spring.
+- Dynamic WSDL generation from XSD schema.
+- Proper separation of service layer and endpoints.
+- Implements multiple SOAP operations for CRUD-like functionality.
+
+## 🔗 References
+
+- Spring Web Services Docs
+- SOAP vs REST
